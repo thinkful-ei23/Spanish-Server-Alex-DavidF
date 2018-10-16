@@ -6,7 +6,9 @@ const bcrypt = require('bcryptjs');
 const userSchema = new mongoose.Schema({
   name: { type: String },
   username: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  last: [{ name: String, correct: Boolean }],
+  wordList: [{ name: String, m: Number, correct: Number, incorrect: Number }]
 });
 
 userSchema.methods.validatePassword = function(password) {
