@@ -10,6 +10,7 @@ const jwtStrategy = require('./passport/jwt');
 
 const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
+const wordRouter = require('./routes/words');
 
 const { PORT, CLIENT_ORIGIN } = require('./config');
 const { dbConnect } = require('./db-mongoose');
@@ -35,6 +36,7 @@ app.use(express.json());
 
 app.use('/api/users', userRouter);
 app.use('/api', authRouter);
+app.use('/api/words', wordRouter);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
