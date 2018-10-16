@@ -1,0 +1,12 @@
+[
+  { "spanish": "hola", "english": "hello" },
+  { "spanish": "buenos dias", "english": "good morning" },
+  { "spanish": "buenas tardes", "english": "good afternoon" },
+  { "spanish": "buenas noches", "english": "good evening" },
+  { "spanish": "cómo se llama", "english": "what is your name" },
+  { "spanish": "cómo está", "english": "how are you" },
+  { "spanish": "estoy bien", "english": "i am fine" },
+  { "spanish": "mucho gusto", "english": "nice to meet you" },
+  { "spanish": "adiós", "english": "goodbye" },
+  { "spanish": "hasta luego", "english": "see you later" }
+]
