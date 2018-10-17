@@ -21,6 +21,7 @@ userSchema.set('toObject', {
   transform: (doc, ret) => {
     delete ret._id;
     delete ret.password;
+    delete ret.__v;
   }
 });
 
