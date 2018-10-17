@@ -26,7 +26,6 @@ const localStrategy = new LocalStrategy((username, password, done) => {
           location: 'password'
         });
       }
-      console.log(user);
       return done(null, user.toObject());
     })
     .catch(err => {
@@ -36,6 +35,5 @@ const localStrategy = new LocalStrategy((username, password, done) => {
       return done(err);
     });
 });
-
 
 module.exports = localStrategy;
