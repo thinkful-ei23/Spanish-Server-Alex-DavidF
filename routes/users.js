@@ -8,9 +8,7 @@ const router = express.Router();
 
 const Word = require('../models/word');
 
-router.get('/', (req, res, next) => {
-
-});
+router.get('/', (req, res, next) => {});
 
 router.post('/', async (req, res, next) => {
   const requiredFields = ['username', 'password'];
@@ -88,9 +86,14 @@ router.post('/', async (req, res, next) => {
     const wordList = await Word.find();
 
     let mappedWordList = wordList.map((word, i) => {
-      return {english: word.english, spanish: word.spanish, mVal: 1, next: i+1};
-    })
-    
+      return {
+        english: word.english,
+        spanish: word.spanish,
+        mVal: 1,
+        next: i + 1
+      };
+    });
+
     mappedWordList[mappedWordList.length - 1].next = -1;
 
     const digest = await User.hashPassword(password);
@@ -116,5 +119,14 @@ router.post('/', async (req, res, next) => {
 });
 
 router.put('/', (req, res, next) => {});
+
+router.get('/:id', (req, res, next) => {
+  let id = req.params.id;
+  User.findById(id, 'wordList')
+    .then(results => {
+      res.json(results);
+    })
+    .catch(err => next(err));
+});
 
 module.exports = router;
