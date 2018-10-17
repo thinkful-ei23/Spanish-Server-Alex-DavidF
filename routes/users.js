@@ -8,9 +8,7 @@ const router = express.Router();
 
 const Word = require('../models/word');
 
-
 router.post('/', async (req, res, next) => {
-
   const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
 
@@ -82,30 +80,26 @@ router.post('/', async (req, res, next) => {
   let { username, password, name = '' } = req.body;
   name = name.trim();
 
+  try {
+    const digest = await User.hashPassword(password);
+    const newUser = {
+      username,
+      password: digest,
+      name
+    };
+    const result = await User.create(newUser);
 
-
-  await User.hashPassword(password)
-    .then(digest => {
-      const newUser = {
-        username,
-        password: digest,
-        name
-      };
-      return User.create(newUser);
-    })
-    .then(result => {
-      return res
-        .status(201)
-        .location(`/api/user/${result.id}`)
-        .json(result);
-    })
-    .catch(err => {
-      if (err.code === 11000) {
-        err = new Error('The username already exists');
-        err.status = 400;
-      }
-      next(err);
-    });
+    await res
+      .status(201)
+      .location(`/api/user/${result.id}`)
+      .json(result);
+  } catch (err) {
+    if (err.code === 11000) {
+      err = new Error('The username already exists');
+      err.status = 400;
+    }
+    next(err);
+  }
 });
 
 router.put('/', (req, res, next) => {});
