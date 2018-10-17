@@ -98,7 +98,7 @@ router.post('/', async (req, res, next) => {
       username,
       password: digest,
       name,
-      wordList
+      wordList: mappedWordList
     };
     const result = await User.create(newUser);
 
