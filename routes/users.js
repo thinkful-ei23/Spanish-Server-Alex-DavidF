@@ -8,6 +8,10 @@ const router = express.Router();
 
 const Word = require('../models/word');
 
+router.get('/', (req, res, next) => {
+
+});
+
 router.post('/', async (req, res, next) => {
   const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
@@ -82,6 +86,13 @@ router.post('/', async (req, res, next) => {
 
   try {
     const wordList = await Word.find();
+
+    let mappedWordList = wordList.map((word, i) => {
+      return {english: word.english, spanish: word.spanish, mVal: 1, next: i+1};
+    })
+    
+    mappedWordList[mappedWordList.length - 1].next = -1;
+
     const digest = await User.hashPassword(password);
     const newUser = {
       username,
