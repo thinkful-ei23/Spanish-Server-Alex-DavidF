@@ -6,7 +6,11 @@ const User = require('../models/users');
 
 const router = express.Router();
 
-router.post('/', (req, res, next) => {
+const Word = require('../models/word');
+
+
+router.post('/', async (req, res, next) => {
+
   const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
 
@@ -78,7 +82,9 @@ router.post('/', (req, res, next) => {
   let { username, password, name = '' } = req.body;
   name = name.trim();
 
-  return User.hashPassword(password)
+
+
+  await User.hashPassword(password)
     .then(digest => {
       const newUser = {
         username,

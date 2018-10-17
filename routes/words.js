@@ -16,6 +16,7 @@ router.use(
 router.get('/', (req, res, next) => {
   Word.find()
     .then(results => {
+      // console.log(results);
       res.json(results);
     })
     .catch(err => next(err));
