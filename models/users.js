@@ -7,8 +7,8 @@ const userSchema = new mongoose.Schema({
   name: { type: String },
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  last: [{ name: String, correct: Boolean }],
-  wordList: [{ name: String, m: Number, correct: Number, incorrect: Number }]
+  head: { type: Number, default: 0 },
+  wordList: [{ spanish: String, english: String, mVal: Number, next: Number }]
 });
 
 userSchema.methods.validatePassword = function(password) {
