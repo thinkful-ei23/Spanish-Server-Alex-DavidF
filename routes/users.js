@@ -81,11 +81,13 @@ router.post('/', async (req, res, next) => {
   name = name.trim();
 
   try {
+    const wordList = await Word.find();
     const digest = await User.hashPassword(password);
     const newUser = {
       username,
       password: digest,
-      name
+      name,
+      wordList
     };
     const result = await User.create(newUser);
 
