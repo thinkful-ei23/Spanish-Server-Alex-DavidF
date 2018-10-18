@@ -118,7 +118,20 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-router.put('/', (req, res, next) => {});
+router.patch('/:id', (req, res, next) => {
+  const { id } = req.params;
+  const { head, wordList } = req.body;
+  const updateUser = {
+    head,
+    wordList
+  };
+  console.log(updateUser);
+  User.findByIdAndUpdate({ _id: id }, updateUser, { new: true })
+    .then(result => {
+      result ? res.json(result) : next();
+    })
+    .catch(err => next(err));
+});
 
 router.get('/:id', (req, res, next) => {
   let id = req.params.id;
