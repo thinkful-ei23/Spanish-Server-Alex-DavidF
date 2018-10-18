@@ -120,12 +120,14 @@ router.post('/', async (req, res, next) => {
 
 router.patch('/:id', (req, res, next) => {
   const { id } = req.params;
+  console.log(req.body);
   const { head, wordList } = req.body;
+  // console.log(head, wordList);
   const updateUser = {
     head,
     wordList
   };
-  console.log(updateUser);
+  // console.log(updateUser);
   User.findByIdAndUpdate({ _id: id }, updateUser, { new: true })
     .then(result => {
       result ? res.json(result) : next();
