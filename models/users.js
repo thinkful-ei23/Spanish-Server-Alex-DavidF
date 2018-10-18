@@ -8,7 +8,9 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   head: { type: Number, default: 0 },
-  wordList: [{ spanish: String, english: String, mVal: Number, next: Number }]
+  wordList: [{ spanish: String, english: String, mVal: Number, next: Number }],
+  correctCount: { type: Number },
+  totalGuesses: { type: Number }
 });
 
 userSchema.methods.validatePassword = function(password) {

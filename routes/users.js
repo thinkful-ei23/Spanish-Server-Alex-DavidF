@@ -121,12 +121,14 @@ router.post('/', async (req, res, next) => {
 router.patch('/:id', (req, res, next) => {
   const { id } = req.params;
   console.log('BODY', req.body);
-  const { head, wordList, userId } = req.body;
+  const { head, wordList, correctCount, totalGuesses } = req.body;
 
   // console.log(head, wordList);
   const updateUser = {
     head,
-    wordList
+    wordList,
+    correctCount,
+    totalGuesses
   };
   console.log('UPDATE', updateUser);
   User.findOneAndUpdate({ _id: id }, updateUser, { new: true })
