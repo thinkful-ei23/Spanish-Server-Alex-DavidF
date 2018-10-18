@@ -94,7 +94,7 @@ router.post('/', async (req, res, next) => {
       };
     });
 
-    mappedWordList[mappedWordList.length - 1].next = -1;
+    mappedWordList[mappedWordList.length - 1].next = 0;
 
     const digest = await User.hashPassword(password);
     const newUser = {
