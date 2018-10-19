@@ -51,7 +51,6 @@ describe('Spanish App API - Users', function() {
     describe('POST', function() {
       it('Should create a new user', function() {
         const testUser = { username, password, name };
-        console.log(testUser);
         let res;
         return chai
           .request(app)
