@@ -1,0 +1,13 @@
+[
+  {
+    "_id": "000000000000000000000001",
+    "name": "Bob User",
+    "username": "bobuser",
+    "password": "$2a$10$hRoJgQAU5O9HKCc0NovCAuYHeEdGwAeL4d6zs0lgFyAhhV8jbCRby",
+    "wordList": [
+      { "english": "bob", "spanish": "test", "mVal": 1 },
+      { "english": "bro", "spanish": "hombre", "mVal": 1 }
+    ],
+    "head": 0
+  }
+]

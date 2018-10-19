@@ -8,5 +8,29 @@
   { "spanish": "estoy bien", "english": "i am fine" },
   { "spanish": "mucho gusto", "english": "nice to meet you" },
   { "spanish": "adiós", "english": "goodbye" },
-  { "spanish": "hasta luego", "english": "see you later" }
+  { "spanish": "con permiso", "english": "excuse me" },
+  { "spanish": "por favor", "english": "please" },
+  { "spanish": "dónde está el baño", "english": "where is the restroom" },
+  { "spanish": "gracías", "english": "thank you" },
+  { "spanish": "quieres comprar esto", "english": "do you want to buy this" },
+  { "spanish": "lo siento", "english": "sorry" },
+  { "spanish": "salud", "english": "bless you" },
+  { "spanish": "de nada", "english": "you are welcome" },
+  { "spanish": "tal vez", "english": "maybe" },
+  { "spanish": "no entiendo", "english": "i do not understand" },
+  { "spanish": "cuánto cuesta", "english": "how much does it cost" },
+  { "spanish": "qué hora es", "english": "what time is it" },
+  {
+    "spanish": "cómo se dice maybe en Español",
+    "english": "how do you say maybe in spanish"
+  },
+  { "spanish": "sí", "english": "yes" },
+  {
+    "spanish": "por favor, habla mas despacio",
+    "english": "would you speak slower, please"
+  },
+  { "spanish": "quièn", "english": "who" },
+  { "spanish": "por què", "english": "why" },
+  { "spanish": "estoy perdido", "english": "I am lost" },
+  { "spanish": "me llamo John", "english": "my name is john" }
 ]

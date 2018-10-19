@@ -23,7 +23,8 @@ userSchema.set('toObject', {
     delete ret._id;
     delete ret.password;
     delete ret.__v;
-    ret.wordList = doc.wordList[doc.head];
+    delete ret.wordList;
+    // ret.wordList = doc.wordList[doc.head];
   }
 });
 
