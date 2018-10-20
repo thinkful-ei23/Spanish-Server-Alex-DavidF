@@ -2,7 +2,7 @@
 
 [Demo Spanish App Here](https://spanish-app-client.herokuapp.com/)
 
-[Spanish App - Client README.md](https://github.com/thinkful-ei23/Spanish-Client-Alex-David/edit/master/README.md)
+[Spanish App - Client README.md](https://github.com/thinkful-ei23/Spanish-Client-Alex-David/blob/master/README.md)
 
 ## Summary
 Spanish app is a responsive full-stack application that allows users to learn Spanish through a techhique called "Spaced Repetition". As the user answers questions correctly, the algorithm will wait a little longer before presenting that particular question again. The data structure that stores the words is a linked list.
