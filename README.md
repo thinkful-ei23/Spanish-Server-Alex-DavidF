@@ -41,3 +41,6 @@ When presented with a word in Spanish, the user has the option to click on a spe
 
 ## Project Location
 Both the client and the server are hosted on Heroku as individual projects.
+
+## API Documentation
+https://documenter.getpostman.com/view/4458639/RzfasXcs
